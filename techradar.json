@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Context engineering",
+    "ring": "Adopt",
+    "quadrant": "Techniques",
+    "isNew": false,
+    "status": "move_in",
+    "description": "<p><strong><a href=\"https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents\">Context engineering</a></strong> has evolved from an optimization tactic into a foundational architectural concern for modern AI systems. Unlike prompt engineering, which focuses on wording, context engineering treats the context window as a design surface and intentionally constructs the AI’s information environment.</p> <p>As agents tackle more complex tasks, dumping raw data into large context windows leads to \"<a href=\"https://www.understandingai.org/p/context-rot-the-emerging-challenge\">context rot</a>\" and degraded reasoning. To combat this, teams are shifting from static, monolithic prompts to <a href=\"/radar/techniques/progressive-context-disclosure\">progressive context disclosure</a>.</p>"
+  },
+  {
+    "name": "Curated shared instructions for software teams",
+    "ring": "Adopt",
+    "quadrant": "Techniques",
+    "isNew": false,
+    "status": "refresh_writeup",
+    "description": "<p>As teams mature in their use of AI, relying on individual developers to write prompts from scratch is emerging as an anti-pattern. We advocate for <strong>curated shared instructions for software teams</strong>, treating AI guidance as a collaborative engineering asset rather than a personal workflow.</p>"
+  },
+  {
+    "name": "DORA metrics",
+    "ring": "Adopt",
+    "quadrant": "Techniques",
+    "isNew": false,
+    "status": "refresh_writeup",
+    "description": "<p>The metrics defined by the <a href=\"https://www.devops-research.com/\">DORA research</a> program have been widely adopted and have proven to be strong leading indicators of how a delivery organization is performing. These include change lead time, deployment frequency, MTTR, change failure rate and rework rate.</p>"
+  },
+  {
+    "name": "Passkeys",
+    "ring": "Adopt",
+    "quadrant": "Techniques",
+    "isNew": false,
+    "status": "move_in",
+    "description": "<p>Shepherded by the FIDO Alliance and backed by Apple, Google and Microsoft, <strong><a href=\"https://fidoalliance.org/passkeys/\">passkeys</a></strong> have matured into Adopt. They are FIDO2 credentials that can replace passwords using asymmetric public-key cryptography.</p>"
+  },
+  {
+    "name": "Structured output from LLMs",
+    "ring": "Adopt",
+    "quadrant": "Techniques",
+    "isNew": false,
+    "status": "move_in",
+    "description": "<p><strong>Structured output from LLMs</strong> is the practice of constraining models to produce responses in a predefined format, such as JSON or a specific programming language class. We recommend using a library such as Instructor.</p>"
+  },
+  {
+    "name": "Zero trust architecture",
+    "ring": "Adopt",
+    "quadrant": "Techniques",
+    "isNew": false,
+    "status": "refresh_writeup",
+    "description": "<p>Zero trust architecture (ZTA) remains a sensible default for securely building and operating agents. Principles such as 'never trust, always verify' should be treated as foundational.</p>"
+  }
+]
