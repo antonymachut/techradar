@@ -824,5 +824,12 @@
     "quadrant": "Languages & Frameworks",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://github.com/unslothai/unsloth\">Unsloth</a></strong> is an open-source framework for LLM fine-tuning and reinforcement learning that focuses on making training significantly faster and more memory efficient. Fine-tuning LLMs involves billions of matrix multiplications, workloads that benefit from GPU acceleration. Unsloth optimizes these operations by translating them into highly efficient custom kernels for NVIDIA GPUs, dramatically reducing cost and memory usage. This makes it possible to fine-tune models on consumer GPUs such as T4 and above rather than requiring expensive H100 clusters. Unsloth supports LoRA, full fine-tuning, multi-GPU training and long-context fine-tuning (up to 500K tokens) for popular models including Llama, Mistral, DeepSeek-R1, Qwen and Gemma. As <a href=\"/radar/techniques/domain-specific-llms\">domain-specific AI</a> applications increasingly rely on fine-tuning, Unsloth significantly lowers the barrier.</p>"
+  },
+  {
+    "name": "TEST",
+    "ring": "ASSESS",
+    "quadrant": "TEST",
+    "isNew": "TRUE",
+    "description": "<p><strong><a href=\"https://github.com/unslothai/unsloth\">Unsloth</a></strong> is an open-source framework for LLM fine-tuning and reinforcement learning that focuses on making training significantly faster and more memory efficient. Fine-tuning LLMs involves billions of matrix multiplications, workloads that benefit from GPU acceleration. Unsloth optimizes these operations by translating them into highly efficient custom kernels for NVIDIA GPUs, dramatically reducing cost and memory usage. This makes it possible to fine-tune models on consumer GPUs such as T4 and above rather than requiring expensive H100 clusters. Unsloth supports LoRA, full fine-tuning, multi-GPU training and long-context fine-tuning (up to 500K tokens) for popular models including Llama, Mistral, DeepSeek-R1, Qwen and Gemma. As <a href=\"/radar/techniques/domain-specific-llms\">domain-specific AI</a> applications increasingly rely on fine-tuning, Unsloth significantly lowers the barrier.</p>"
   }
 ]
