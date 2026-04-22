@@ -105,6 +105,13 @@
     "description": "<p><strong>Server-driven UI</strong> is returning to the Trial ring as we see more teams successfully shortening their path to production. By separating rendering into a generic container while providing structure and data via the server, mobile teams can bypass lengthy app store review cycles for every iteration. We\u2019ve seen this significantly improve time to market, with JSON-based formats enabling real-time updates. While we previously cautioned against the \"horrendous, overly configurable messes\" that proprietary frameworks can create, the emergence of more stable patterns from companies such as Airbnb and Lyft has helped reduce complexity.</p>\n <p>Our experience shows that the substantial investment required for a proprietary framework is now easier to justify for large-scale applications. However, it still requires a strong business case and disciplined engineering to avoid creating a \"god-protocol\" that becomes difficult to maintain. For teams looking to reduce client-side complexity, this approach provides a powerful way to scale across teams and synchronize logic across platforms. We recommend applying it to highly dynamic areas of an application rather than as a blanket replacement for all UI development.</p>"
   },
   {
+    "name": "SKills",
+    "ring": "ASSESS",
+    "quadrant": "Techniques",
+    "isNew": "FALSE",
+    "description": "" 
+  },
+  {
     "name": "Agentic reinforcement learning environments",
     "ring": "ASSESS",
     "quadrant": "Techniques",
@@ -469,78 +476,50 @@
     "description": ""
   },
   {
-    "name": "Axe-core",
-    "ring": "ADOPT",
-    "quadrant": "Tools",
-    "isNew": "FALSE",
-    "description": "<p><strong><a href=\"https://github.com/dequelabs/axe-core\">Axe-core</a></strong> is an open-source accessibility testing tool that detects issues in websites and other HTML-based applications. It checks pages for compliance with standards such as <a href=\"https://www.wcag.com/resource/what-is-wcag/\">WCAG</a> \u2014 including conformance levels A, AA and AAA \u2014 and flags common accessibility best practices. Since first appearing in the Radar in Trial in 2021, several of our teams have adopted Axe-core with clients. Accessibility is increasingly a mandatory quality attribute. In Europe, for example, regulations such as the <a href=\"https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/european-accessibility-act-eaa_en\">European Accessibility Act</a> require organizations to ensure their digital services meet accessibility requirements. Axe-core fits well within modern development workflows by enabling automated checks in CI pipelines. This helps teams prevent regressions, maintain compliance and receive early feedback during development, ensuring accessibility is part of the feedback loop, particularly as AI-assisted and agentic coding tools are more widely adopted.</p>"
-  },
-  {
     "name": "Claude Code",
-    "ring": "ADOPT",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "FALSE",
     "description": "<p>Anthropic's <strong><a href=\"https://claude.com/product/claude-code\">Claude Code</a></strong> is an agentic AI coding tool for planning and executing complex multi-step workflows. We\u2019re moving Claude Code to Adopt because teams inside and outside Thoughtworks now use it day-to-day in production software delivery, where it's widely treated as a benchmark for capability and usability. The CLI agent landscape has expanded quickly with tools such as OpenAI's <a href=\"/radar/tools/openai-codex\">Codex CLI</a>, Google's <a href=\"https://developers.google.com/gemini-code-assist/docs/gemini-cli\">Gemini CLI</a>, <a href=\"/radar/tools/opencode\">OpenCode</a> and <a href=\"/radar/tools/pi\">pi</a>, but Claude Code remains the preferred option for many teams. Its use now extends beyond code authoring into broader workflow execution, including specifications, stories, configuration, infrastructure, documentation and markdown-defined business processes. Claude Code continues to introduce features that other tools follow, such as skills, subagents, remote control and agentic team workflows.</p>\n <p>Teams adopting Claude Code should pair it with disciplined operating practices. Agentic coding shifts developer effort from manual implementation toward specifying intent, constraints and review boundaries. This can accelerate delivery, but it also increases the risk of <a href=\"/radar/techniques/complacency-with-ai-generated-code\">complacency with AI-generated code</a>, which can make systems harder to maintain and evolve for both people and agents. We're seeing growing attention to <a href=\"https://martinfowler.com/articles/exploring-gen-ai/harness-engineering.html\">harness engineering</a> as a way to implement <a href=\"/radar/techniques/context-engineering-topic-aware-scope-driven-context-selection-for-llms\">context engineering (topic-aware, scope-driven context selection)</a> and <a href=\"/radar/techniques/curated-shared-instructions-for-software-teams\">curated shared instructions</a> to make agentic workflows more reliable.</p>"
   },
   {
     "name": "Cursor",
-    "ring": "ADOPT",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "FALSE",
     "description": "<p><strong><a href=\"https://www.cursor.com\">Cursor</a></strong> is among the most widely adopted coding agents we see today, consistently appearing alongside <a href=\"/radar/tools/claude-code\">Claude Code</a> as a default choice for our delivery teams. It has matured into a comprehensive agentic environment with features such as plan mode, hooks and subagents. While terminal-based agents remain popular, many of our developers find that supervising an agent within an IDE provides a richer experience for reviewing and refining plans before execution. The adoption of the <a href=\"https://github.com/agentclientprotocol/agent-client-protocol\">Agent Client Protocol</a> has further lowered barriers for the large Jetbrains user base, making Cursor's capabilities accessible within those IDEs.</p>\n <p>We particularly value the ability to inspect individual agent steps or roll back to earlier stages when a plan deviates. By leveraging <a href=\"/radar/techniques/agent-skills\">Agent Skills</a>, teams can package reusable instructions to help standardize how agents interact with complex codebases. While productivity gains are evident, agentic autonomy still requires rigorous automated testing and human oversight to catch subtle regressions.</p>"
   },
   {
-    "name": "Kafbat UI",
-    "ring": "ADOPT",
-    "quadrant": "Tools",
-    "isNew": "TRUE",
-    "description": "<p><strong><a href=\"https://github.com/kafbat/kafka-ui\">Kafbat UI</a></strong> is a free, open-source web UI for monitoring and managing <a href=\"/radar/platforms/apache-kafka\">Apache Kafka</a> clusters. We've found it especially useful when teams need to inspect payloads that are otherwise hard to read during day-to-day debugging. In our experience, teams often get stuck when debugging encrypted messages, and Kafbat UI's support for built-in and pluggable SerDes provides a practical way to apply decryption or custom decoding so messages become readable again. Compared with one-off debug scripts, it offers faster feedback and a better operational experience for developers and support teams. We recommend Kafbat UI for Kafka-heavy environments where secure message inspection and efficient troubleshooting should be standard practice.</p>"
-  },
-  {
     "name": "mise",
-    "ring": "ADOPT",
+    "ring": "ASSESS",
     "quadrant": "Tools",
     "isNew": "FALSE",
     "description": "<p>Since our last assessment, <strong><a href=\"https://mise.jdx.dev/\">mise</a></strong> has evolved from a high-performance alternative to <a href=\"/radar/tools/asdf-vm\">asdf</a> into a default frontend for the development environment. We\u2019re moving it to Adopt because it consolidates three fragmented concerns \u2014 tool and language versioning, environment variable management and task execution \u2014 into a single high-performance, Rust-based tool, configured through a declarative mise.toml file. mise is easy to set up and works well with CI/CD pipelines. It also adds a layer of supply chain security through integration with <a href=\"https://github.com/sigstore/cosign\">Cosign</a> and <a href=\"https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations\">GitHub Artifact Attestations</a>, which is often missing from other version managers.</p>\n <p>For teams looking to standardize their developer environment setup, mise has become our recommended default. In polyglot environments with multiple microservices, this is especially useful when codebases adopt new language versions at the same time. Best of all, mise also works with existing language-specific tooling, so teams do not need to migrate all at once.</p>"
   },
   {
-    "name": "cargo-mutants",
-    "ring": "TRIAL",
-    "quadrant": "Tools",
-    "isNew": "TRUE",
-    "description": "<p><strong><a href=\"https://mutants.rs\">cargo-mutants</a></strong> is a mutation testing tool for Rust that helps our teams move beyond simple code coverage metrics. By automatically injecting small, intentional bugs \u2014 such as swapping operators or returning default values \u2014 it verifies whether existing tests actually catch regressions. We\u2019ve found its zero-configuration approach particularly effective; unlike previous tools, it requires no changes to the source tree. For our teams new to Rust, it provides a useful feedback loop, identifying missing edge cases and improving the reliability of unit and integration tests.</p>\n <p>This tool is a specialized implementation of <a href=\"/radar/techniques/mutation-testing\">mutation testing</a>, which we\u2019re also trialing in other ecosystems. The primary cost is increased test execution time, as each mutant requires an incremental build. To manage this, we recommend targeting specific modules during local development or running full suites asynchronously in CI. While teams may occasionally need to filter out logically equivalent mutants, the resulting increase in testing confidence outweighs the additional noise.</p>"
-  },
-  {
     "name": "Claude Code plugin marketplace",
-    "ring": "TRIAL",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p>Previously, sharing custom commands, specialized agents, MCP servers and <a href=\"/radar/techniques/agent-skills\">skills</a> was a manual process that relied on developers to copy and paste instructions from Confluence or other external sources. This often led to version drift, with team members using outdated project instructions. Our teams are now leveraging the <strong><a href=\"https://code.claude.com/docs/en/plugin-marketplaces\">Claude Code plugin marketplace</a></strong> to distribute shared commands, prompts and skills using a Git-based distribution model. By hosting internal team marketplaces on GitHub or similar platforms, organizations can distribute these artifacts more securely and consistently. Developers can then sync the AI-driven workflows and tools directly into their local environments via the CLI. Other coding agents such as <a href=\"/radar/tools/cursor\">Cursor</a> also support a team <a href=\"https://cursor.com/docs/plugins\">plugin marketplace</a>, enabling a more streamlined and governed way to share these artifacts.</p>"
   },
   {
     "name": "Dev Containers",
-    "ring": "TRIAL",
+    "ring": "ASSESS",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://containers.dev/\">Dev Containers</a></strong> provide a standardized way to define reproducible, containerized development environments using a <code>devcontainer.json</code> configuration file. Originally designed to give teams consistent development setups, Dev Containers have found a compelling new use case as <a href=\"/radar/techniques/sandboxed-execution-for-coding-agents\">sandboxed execution environments for coding agents</a>. Running an AI coding agent inside a Dev Container isolates it from the host file system, credentials and network, allowing teams to grant agents broad permissions without risking the host machine. The <a href=\"https://containers.dev/\">open specification</a> is supported natively by VS Code and VS Code\u2013based tools such as Cursor. <a href=\"https://github.com/loft-sh/devpod\">DevPod</a> extends devcontainer support to any editor or terminal workflow via SSH. Dev Containers take an ephemeral-by-default approach (i.e., the container rebuilds from the configuration on each launch) which provides a clean security boundary at the cost of reinstalling tools and dependencies. For teams that need persistent state or checkpoint and restore capabilities, alternatives such as <a href=\"/radar/platforms/sprites\">Sprites</a> take a different approach. Dev Containers also offer supply chain security benefits beyond agent sandboxing. By defining the toolchain in a declarative configuration, teams reduce exposure to compromised packages and unexpected dependencies on developer machines.</p>"
   },
   {
     "name": "Figma Make",
-    "ring": "TRIAL",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p>We previously blipped <a href=\"/radar/techniques/self-serve-ui-prototyping-with-genai\">self-serve UI prototyping with GenAI</a> and this technique is now widely adopted by development teams, including product managers and designers, to generate user-testable, high-fidelity prototypes. <strong><a href=\"https://www.figma.com/make/\">Figma Make</a></strong> is a strong option for building such prototypes because it leverages actual components and layers from a design system, making the results closely resemble production applications. Figma Make uses a bespoke AI model trained on high-quality design patterns. Our teams are using it to create new design screens, enhance existing ones and build shareable prototypes to gather rapid user feedback.</p>"
   },
   {
-    "name": "OpenAI Codex",
-    "ring": "TRIAL",
-    "quadrant": "Tools",
-    "isNew": "TRUE",
-    "description": "<p><strong><a href=\"https://openai.com/blog/openai-codex\">OpenAI Codex</a></strong> has evolved into a standalone agentic coding tool, available via a dedicated macOS app and CLI. It's designed for autonomous task delegation: given a prompt, it plans, implements and iterates across files with minimal intervention. Our teams have found it effective as a high-velocity drafting tool, particularly for greenfield tasks and repetitive implementation work. However, its tendency to suggest logically sound but functionally outdated library patterns means that automated testing and human review are essential. As with other agentic tools in this Radar, the risk of accumulating subtle technical debt is real and proportional to the level of autonomy teams grant it.</p>"
-  },
-  {
     "name": "Typst",
-    "ring": "TRIAL",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://github.com/typst/typst\">Typst</a></strong> is a markup-based typesetting system positioned as a modern successor to <a href=\"https://www.latex-project.org/\">LaTeX</a> for programmatic document generation. It combines high-quality typography with a simpler syntax and a significantly faster compilation pipeline, compiling even very large documents in a fraction of the time required by traditional LaTeX toolchains. Typst offers clearer error messages and built-in scripting capabilities such as conditionals and loops. It can also load structured data from JSON or CSV, making it well suited to automated document generation.</p>\n <p>Our teams have used Typst to generate statements and reports for banking and financial services customers where documents must be produced at scale with consistent formatting. The open-source compiler can be self-hosted, and its growing ecosystem includes community-contributed <a href=\"https://github.com/typst/packages/\">packages</a>. Typst is more approachable than LaTeX while delivering comparable typographic quality.</p>"
@@ -548,118 +527,104 @@
   {
     "name": "Agent Scan",
     "ring": "ASSESS",
-    "quadrant": "Tools",
+    "quadrant": "CAUTION",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://github.com/snyk/agent-scan\">Agent Scan</a></strong> is a security scanner for agent ecosystems that discovers local components, including MCP servers and skills, and flags risks such as prompt injection, tool poisoning, toxic flows, hardcoded secrets and unsafe credential handling. It addresses an emerging gap in agent supply chain visibility and provides a practical way to inventory and test rapidly growing agent surfaces. However, adoption should be deliberate. This is for several reasons: Scans require sharing component metadata with Snyk APIs, and signal quality and false-positive rates requiere validation in your environment. It\u2019s important that teams confirm the operational value of Agent Scan before making it part of mandatory delivery gates.</p>"
   },
   {
     "name": "Beads",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://github.com/steveyegge/beads\">Beads</a></strong> is a Git-backed issue tracker designed as a persistent memory layer for coding agents. Instead of relying on ad hoc Markdown plans, it gives agents a structured task graph with blocker relationships, ready-work detection and branch-friendly coordination for long-horizon work across sessions. It\u2019s built on <a href=\"https://github.com/dolthub/dolt\">Dolt</a>, a SQL database with built-in version control that supports branches, merging, diffs and table cloning similar to a Git repository. Beads represents a new category of agent-native project memory and task tracking tools. Other early projects in this space include <a href=\"https://github.com/wedow/ticket\">ticket</a> and <a href=\"https://github.com/Abil-Shrestha/tracer\">tracer</a>. Unlike traditional ticketing systems such as GitHub Issues and Jira, Beads and similar tools enable new workflows for coordinating autonomous multi-agent execution, including agents assigning tasks to one another.</p>"
   },
   {
     "name": "Bloom",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://github.com/safety-research/bloom\">Bloom</a></strong> is a tool from Anthropic for AI safety researchers evaluating LLM behavior. It probes for behaviors such as sycophancy and self-preservation. Compared to static benchmarks, it uses a seed configuration that defines target behaviors and evaluation parameters to dynamically generate diverse test conversations and then evaluate the results. This approach to <a href=\"https://www.anthropic.com/research/bloom\">automated behavioral evaluation</a> is necessary to keep up with the pace of model releases, enabling external research teams to conduct evaluations. <a href=\"https://github.com/safety-research/petri\">Petri</a> is a companion tool that identifies which behaviors emerge for a given model, while Bloom identifies in what scenarios and how often those behaviors occur, together forming a more complete evaluation suite. One concern is that Bloom requires a teacher (or evaluator) model that assesses a given student model. Teacher models may have blind spots and biases, so using multiple evaluators can reduce bias in the results. AI safety research teams should assess Bloom as a complement to static benchmarks for evaluating emergent model behaviors.</p>"
   },
   {
     "name": "CDK Terrain",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://github.com/open-constructs/cdk-terrain\">CDK Terrain</a></strong> (CDKTN) is a community fork of the Cloud Development Kit for Terraform (<a href=\"/radar/tools/cdktf\">CDKTF</a>), which HashiCorp deprecated and archived in December 2025. CDK Terrain picks up where CDKTF left off, allowing teams to define infrastructure using TypeScript, Python or Go and provision it through Terraform or OpenTofu. For teams already invested in CDKTF, CDK Terrain offers a migration path that preserves existing code and workflows rather than forcing a move to <a href=\"https://github.com/cdktf\">HCL</a> or <a href=\"https://www.pulumi.com/blog/cdktf-is-deprecated-whats-next-for-your-team/\">Pulumi</a>. The project releases every month and has added OpenTofu support as a first-class target. However, community-maintained forks of vendor-abandoned projects carry inherent risk around long-term support, and the CDKTF approach never achieved broad adoption. HashiCorp cited lack of product-market fit when sunsetting it. Teams currently using CDKTF should assess CDK Terrain as a continuation option, but also weigh whether this is the right moment to migrate to a more widely supported approach.</p>"
   },
   {
     "name": "CodeScene",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p>We blipped <a href=\"radar/techniques/social-code-analysis\">social code analysis</a> back in 2017, but with the increased adoption of coding agents we\u2019re seeing renewed interest in it, particularly in tools such as <strong><a href=\"https://codescene.com/\">CodeScene</a></strong>. CodeScene is a behavioral code analysis tool that identifies technical debt by combining code complexity metrics with version control history. Unlike traditional static analysis, it highlights \"hotspots\" to help teams prioritize refactoring based on actual development activity and business impact. CodeScene now provides guidance for <a href=\"/radar/techniques/ai-friendly-code-design\">AI-friendly code design</a>. Our teams are finding code quality has become even more important as coding agents can modify code far more rapidly than human developers. CodeScene\u2019s CodeHealth metric provides a useful guardrail by identifying areas where code is too complex for LLMs to safely refactor without a high risk of hallucinations. We recommend teams assess CodeScene as a guardrail for coding agent adoption. Its CodeHealth metric highlights safe refactoring targets and flags areas that require remediation before agents are applied.</p>"
   },
   {
     "name": "ConfIT",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://github.com/techygarg/ConfIT\">ConfIT</a></strong> is a library for defining integration and component-style API tests declaratively in JSON rather than writing test flows imperatively in code. We're seeing increased interest in this approach, as large test suites often accumulate boilerplate around HTTP clients, request setup and assertions. AI-assisted development further reinforces this trend, making structured test definitions easier to generate and maintain than verbose procedural code. </p>\n <p>Based on client experience and our evaluation, a declarative layer can reduce duplication between component and integration tests, improve readability and make test intent easier to evolve across teams. However, ConfIT itself appears to have limited community adoption and a small ecosystem, making it harder to recommend broadly despite these benefits. We think ConfIT is worth assessing for .NET teams exploring specification-driven API testing. Teams should, however, validate its long-term maintainability, ecosystem fit and operational trade-offs before adopting it more widely.</p>"
   },
   {
     "name": "Entire CLI",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://github.com/entireio/cli\">Entire CLI</a></strong> hooks into Git workflows to capture AI coding agent sessions \u2014 including transcripts, prompts, tool calls, files touched and token usage \u2014 as searchable metadata stored on a dedicated repository branch. It supports <a href=\"/radar/tools/claude-code\">Claude Code</a>, Gemini CLI, <a href=\"/radar/tools/opencode\">OpenCode</a>, <a href=\"/radar/tools/cursor\">Cursor</a>, Factory AI Droid and GitHub Copilot CLI. As AI agents become primary contributors to codebases, teams face a growing gap between what Git tracks and what actually happens during a coding session. Entire CLI addresses this by recording full sessions alongside commits, creating an audit trail of agent activity without polluting the main branch history. Its checkpoint system also enables practical recovery: teams can rewind to a known-good state when an agent goes deviates and resume from any checkpoint. While the tool is still very new and the ecosystem for agent session traceability is still forming, teams with compliance or audit requirements around AI-generated code may find Git-native session capture a natural fit.</p>"
   },
   {
     "name": "Git AI",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://usegitai.com\">Git AI</a></strong> is an open-source Git extension that tracks AI-generated code in your repositories, linking every AI-written line to the agent, model, and prompts that generated it. Git AI uses checkpoints and hooks to track incremental code changes between the start and end of a commit. Each checkpoint contains a diff between the current state and the previous checkpoint, marked as either AI or human authored. This approach is more accurate than those approaches focusing on tracking AI code authorship by counting lines of code at the moment of insertion. </p>\n <p>Git AI uses an <a href=\"https://github.com/git-ai-project/git-ai/blob/main/specs/git_ai_standard_v3.0.0.md\">open standard</a> for tracking AI-generated code with Git Notes. While the ecosystem of supported agents is still maturing, we believe Git AI is worth assessing for teams looking to maintain long-term accountability and maintainability in an agentic workflow. Both humans and AI agents can query the original intent and architectural decisions behind a specific block of code via the /ask skill, by referencing the archived agent session.</p>"
   },
   {
     "name": "Google Antigravity",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://antigravity.google/\">Google Antigravity</a></strong> is a standalone VS Code fork, built on technology licensed from Windsurf and <a href=\"https://developers.googleblog.com/build-with-google-antigravity-our-new-agentic-development-platform/\">launched in public preview</a> alongside Gemini 3 in November 2025. Antigravity centers the IDE around multi-agent orchestration: an Agent Manager runs multiple agents in parallel across tasks, a built-in Chromium browser allows agents to interact with live UIs directly and a skills system stores reusable agent instructions in the repository. </p>\n <p>The Agent Manager acts as a \"Mission Control\" dashboard rather than a standard chat sidebar, fundamentally shifting the developer's role from writing code line by line to orchestrating multiple autonomous workstreams. Developers can still drop into the editor for human-in-the-loop (HITL) control when needed. Antigravity integrates with Google Cloud and Firebase through the <a href=\"/radar/platforms/model-context-protocol-mcp\">Model Context Protocol</a> and supports agent development via the <a href=\"/radar/languages-and-frameworks/agent-development-kit-adk\">Agent Development Kit</a>. We're placing Antigravity in Assess because it remains in public preview with no GA date, and its security posture and enterprise readiness are still evolving. The multi-agent execution model and autonomous browser access signal where agentic IDEs are heading.</p>"
   },
   {
-    "name": "Google Mainframe Assessment Tool",
-    "ring": "ASSESS",
-    "quadrant": "Tools",
-    "isNew": "TRUE",
-    "description": "<p><a href=\"https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview\">Google\u2019s Mainframe Assessment Tool</a> helps organizations reverse-engineer applications running on mainframes by analyzing either an entire portfolio or individual systems. At its core, it relies on deterministic language parsers to map call flows and data dependencies across codebases, creating a structural view of how applications interact. On top of this foundation, generative AI features provide summaries, documentation, test case generation and modernization suggestions. This approach aligns with a broader pattern of <a href=\"/radar/techniques/using-genai-to-understand-legacy-codebases\">using GenAI to understand legacy codebases</a>, where strong insights about the system form the foundation for the effective use of AI. While the tool does not yet support all major mainframe technology stacks, it\u2019s evolving rapidly. Our teams have found it helpful for client engagements focused on mainframe application discovery and modernization.</p>"
-  },
-  {
     "name": "OpenCode",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://github.com/sst/opencode\">OpenCode</a></strong> has quickly become one of the most prominent open-source coding agents, with a strong terminal-first experience. A major strength is model flexibility: it supports hosted frontier models, self-hosted endpoints and local models. This makes OpenCode attractive for cost control, customization and restricted environments including air-gapped setups. It also means users need to be explicit about licensing and provider terms when using subscriptions or APIs.</p>\n <p>OpenCode\u2019s extension model is another key part of its appeal, supporting both plugins and MCP integrations for team-specific workflows, tools and guardrails. Many users leverage on <a href=\"https://github.com/code-yeongyu/oh-my-openagent\">Oh My OpenCode</a>, an optional but popular harness that provides a more opinionated, batteries-included setup with coordinated agent teams and richer orchestration patterns.</p>"
   },
   {
     "name": "OpenSpec",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p>As the capabilities of <a href=\"/radar/tools/software-engineering-agents\">AI coding agents</a> evolve, developers increasingly face challenges with predictability and maintainability when requirements and context live only in ephemeral chat histories. To address this, we're seeing the emergence of <a href=\"/radar/techniques/spec-driven-development\">spec-driven development (SDD)</a> tools. <strong><a href=\"https://github.com/Fission-AI/OpenSpec\">OpenSpec</a></strong> is an open-source SDD framework that introduces a lightweight specification layer, ensuring human developers and AI agents align on what to build before code is generated.</p>\n <p>What sets OpenSpec apart is its fluid, <a href=\"https://github.com/Fission-AI/OpenSpec/blob/main/docs/workflows.md\">minimal workflow</a> which is often reduced to three steps: propose -&gt; apply -&gt; archive. Many SDD frameworks (e.g., <a href=\"/radar/languages-and-frameworks/github-spec-kit\">GitHub Spec Kit</a>) or Agentic Skills workflows (e.g.,<a href=\"/radar/languages-and-frameworks/superpowers\"> Superpowers</a>) are better suited to greenfield projects than brownfield ones. We particularly like OpenSpec\u2019s focus on <a href=\"https://github.com/Fission-AI/OpenSpec/blob/main/docs/concepts.md\">spec deltas</a> rather than defining a complete specification upfront, making it well-suited for existing systems.</p>\n <p>Unlike heavier alternatives that enforce more rigid workflows (e.g., <a href=\"https://github.com/bmad-code-org/BMAD-METHOD\">BMAD</a>) or require vendor-specific IDE integrations (e.g., <a href=\"https://kiro.dev/\">Kiro</a>), OpenSpec is iterative and tool agnostic. For teams looking to introduce structure and predictability into AI-assisted development without adopting a heavyweight process, OpenSpec is a developer-friendly framework worth assessing. Meanwhile, as models and coding agents continue to grow more powerful, we also recommend teams continue to monitor and revisit native capabilities and re-evaluate the need for SDD tooling.</p>"
   },
   {
     "name": "PageIndex",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p><a href=\"https://github.com/VectifyAI/PageIndex\">PageIndex</a> is a tool that builds a hierarchical index of a document for vectorless, reasoning-based RAG pipelines, rather than relying on traditional embedding-based retrieval. Instead of chunking a document into vectors, which can lose structural information and provide limited visibility into why results were retrieved, PageIndex builds a table of contents index that an LLM traverses step-by-step to retrieve relevant content. This produces an explicit reasoning trace that explains why a particular section was selected, similar to how a human scans headings and drills down into specific sections. Some of our teams have found this approach works well for documents where meaning depends heavily on structure rather than semantics, such as financial reports with numerical data, legal documents with cross-referenced articles and complex clinical or scientific documents. However, this approach comes with trade-offs. For instance, because LLM inference is part of the retrieval process, it can introduce significant latency and cost, especially for large documents.</p>"
   },
   {
     "name": "Pencil",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://www.pencil.dev/\">Pencil</a></strong> is a design canvas tool that integrates with IDEs and coding agents such as <a href=\"/radar/tools/cursor\">Cursor</a> and <a href=\"/radar/tools/claude-code\">Claude Code</a>. Unlike <a href=\"/radar/tools/figma\">Figma</a>, which currently only offers read access, Pencil runs a bidirectional local MCP server that gives both read and write access to directly manipulate the canvas. It also provides design-to-code capabilities similarly to tools such as <a href=\"/radar/tools/figma-make\">Figma Make</a> and <a href=\"https://www.builder.io/\">Builder.io</a>, but takes a more developer-centric approach, with design files stored in the repository in an open JSON format called .pen, making design assets versionable alongside code. This approach can help close the design-to-development hand-off gap by integrating with tools familiar to developers. For large-scale and complex design systems, Figma remains the standard for collaboration across roles. However, Pencil is worth considering for teams without dedicated designers or for teams with developers who have strong design skills.</p>"
   },
   {
-    "name": "Pi",
-    "ring": "ASSESS",
-    "quadrant": "Tools",
-    "isNew": "TRUE",
-    "description": "<p><strong><a href=\"https://github.com/badlogic/pi-mono\">Pi</a></strong> is a minimalist, open-source terminal coding agent written in TypeScript. We see it as an appealing option for tinkerers and experimenters rather than a mainstream enterprise default. Pi is a bare-bones harness that is more customizable than a full agent such as <a href=\"/radar/tools/opencode\">OpenCode</a>. It\u2019s also easier to adapt than building a new agent with an agentic framework such as <a href=\"/radar/languages-and-frameworks/agent-development-kit-adk\">ADK</a>, <a href=\"/radar/languages-and-frameworks/langgraph\">LangGraph</a> or <a href=\"/radar/languages-and-frameworks/mastra\">Mastra</a>.</p>\n <p>The project is still early and primarily maintainer-led, despite strong traction and active releases. Treat pi as an engineer-facing building block, not a complete enterprise platform with full guardrails and support.</p>"
-  },
-  {
     "name": "Qwen 3 TTS",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://github.com/QwenLM/Qwen3-TTS\">Qwen 3 TTS</a></strong> is an open-source text-to-speech model that closes much of the quality gap with commercial offerings while providing greater developer control than many paid APIs. It supports multiple languages, can clone voices from short samples (roughly 10\u201315 seconds) and allows post-training fine-tuning for domain- or character-specific voices, making it a compelling option for teams that need brand-specific speech or on-prem control. It\u2019s still a recent release, and teams should validate stability, safety controls, licensing fit and operational maturity before adopting it for production-critical voice workloads.</p>"
   },
   {
     "name": "SGLang",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://github.com/sgl-project/sglang\">SGLang</a></strong> is a high-performance serving framework that reduces the compute overhead of LLM inference through a co-design of its front-end programming language and back-end runtime. It introduces RadixAttention, a memory management technique that aggressively caches and reuses the KV (key-value) states across prompts. This approach delivers significant performance improvements over standard serving engines such as <a href=\"https://github.com/vllm-project/vllm\">vLLM</a> in scenarios with high prefix overlap. For teams building complex autonomous agents, relying on long system prompts or using extensive few-shot prompting with shared examples, SGLang can provide substantial gains in latency and efficiency.</p>"
@@ -673,14 +638,14 @@
   },
   {
     "name": "Warp",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "FALSE",
     "description": "<p>Since we last included <strong><a href=\"https://www.warp.dev/\">Warp</a></strong> in the Radar, it has evolved well beyond its \u201cterminal with AI features\u201d description. Its core strengths remain \u2014 block-based command output, AI-driven suggestions and notebook features \u2014 but Warp has expanded into territory traditionally occupied by IDEs. It now can render Markdown, display a file tree and open files directly in the terminal, supporting a full agentic development workflow across panes: a coding agent such as <a href=\"/radar/tools/claude-code\">Claude Code</a> in one, a shell in another and a workspace file view in a third pane. </p>\n <p>One practical advantage we've observed is that Warp handles the high-throughput text output produced by modern coding agents better than traditional terminals, where rendering speed and readability can become bottlenecks. Warp has also added a built-in coding assistant, though this hasn't been widely evaluated in our teams. Warp recently launched <a href=\"https://docs.warp.dev/agent-platform\">Oz</a>, an orchestration platform for cloud agents that integrates with the terminal. This blip focuses on the terminal itself. Teams that prefer a lightweight, composable terminal and want to bring their own AI tooling may find <a href=\"https://ghostty.org/\">Ghostty</a> a better fit; it takes a deliberately minimalist approach in contrast to Warp's batteries-included philosophy. The pace of new features and Warp's broader platform ambitions make a move Trial premature until the product stabilizes and we gain more field experience with its newer capabilities.</p>"
   },
   {
     "name": "WuppieFuzz",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Tools",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://github.com/TNO-S3/WuppieFuzz\">WuppieFuzz</a></strong> is an open-source <a href=\"https://en.wikipedia.org/wiki/Fuzzing\">fuzzer</a> for REST APIs that uses an OpenAPI definition to generate valid requests, mutates them to explore edge cases and relies on server-side coverage feedback to prioritize inputs that reach new execution paths. This matters because most teams still rely on example-based integration and contract tests, which rarely probe unexpected inputs, unusual request sequences or failure-heavy paths, even though APIs are often the main integration surface of modern systems. Based on our early evaluation, WuppieFuzz looks like a promising complement to these tests, because it can uncover issues such as unhandled exceptions, authorization gaps, sensitive data leaks, server-side errors and logic flaws that scripted tests may miss. Teams still need to evaluate how it fits into CI, the run-time overhead it introduces and how useful its results are in practice. For that reason, we think WuppieFuzz is worth assessing for teams building critical or externally exposed REST APIs.</p>"
