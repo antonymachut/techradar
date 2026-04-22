@@ -680,42 +680,21 @@
   },
   {
     "name": "Apache Iceberg",
-    "ring": "ADOPT",
+    "ring": "CAUTION",
     "quadrant": "Languages & Frameworks",
     "isNew": "FALSE",
     "description": "<p><strong><a href=\"https://iceberg.apache.org/\">Apache Iceberg</a></strong> is an open table format for large-scale analytical datasets that defines how data files, metadata and schemas are organized on storage systems such as S3. Having evolved significantly in recent years, it has become a foundational building block for technology-agnostic lakehouse architectures. </p>\n <p>Iceberg is now supported by all major data platform providers \u2014 including AWS (Athena, EMR, Redshift), Snowflake, Databricks and Google BigQuery \u2014 making it a strong option for avoiding vendor lock-in. What distinguishes Iceberg from other open table formats is its openness across features and governance, unlike alternatives whose capabilities are limited or controlled by a single vendor. </p>\n <p>From a reliability perspective, Iceberg's snapshot-based design provides serializable isolation, safe concurrent writes through optimistic concurrency and version history with rollback. These capabilities deliver strong correctness guarantees while avoiding performance bottlenecks. </p>\n <p>While <a href=\"https://spark.apache.org/\">Apache Spark</a> remains the most common engine used with Iceberg, it\u2019s also well supported by <a href=\"/radar/platforms/trino\">Trino</a>, <a href=\"https://flink.apache.org/\">Flink</a>, <a href=\"https://duckdb.org/docs/stable/core_extensions/iceberg/overview\">DuckDB</a> and others, making it suitable for a wide range of use cases, from enterprise data platforms to lightweight local analytics. Across many of our teams, Iceberg has earned strong trust as a stable, open data format; we recommend it as a default choice for organizations building modern data platforms.</p>"
   },
   {
     "name": "Declarative Automation Bundles",
-    "ring": "ADOPT",
+    "ring": "CAUTION",
     "quadrant": "Languages & Frameworks",
     "isNew": "FALSE",
     "description": "<p><strong>Declarative Automation Bundles</strong> (formerly known as <a href=\"https://docs.databricks.com/aws/en/dev-tools/bundles/\">Databricks Asset Bundles</a>) has evolved into a primary tool for bringing software engineering and CI/CD practices to the Databricks ecosystem. The tool has matured significantly and now enables our teams to manage most platform resources as code, including clusters, ETL pipelines, jobs, machine-learning models and dashboards. Using the databricks <code><a href=\"https://docs.databricks.com/aws/en/dev-tools/cli/bundle-commands#plan\">bundle plan</a></code> command, teams can preview changes and apply repeatable deployment practices to Databricks artifacts, similar to how infrastructure is managed with tools such as Terraform. Treating traditionally mutable assets, such as dashboards and ML pipelines, as code allows them to be version-controlled, tested and deployed with the same rigor as traditional microservices. Based on our experience in production environments, Declarative Automation Bundles has become a reliable approach for managing data and ML workflows on Databricks. Teams working extensively in the Databricks ecosystem should consider adopting it to standardize infrastructure management practices.</p>"
   },
   {
-    "name": "React JS",
-    "ring": "ADOPT",
-    "quadrant": "Languages & Frameworks",
-    "isNew": "FALSE",
-    "description": "<p><strong><a href=\"https://react.dev\">React</a></strong> has been our default choice for JavaScript UI development since 2016, but with the stable release of React Compiler coming last October (as part of React 19), it's worth revisiting. There are a number of reasons this feature is notable. By handling memoization at build time, for example, it makes manual <code>useMemo</code> and <code>useCallback</code> largely unnecessary, though the team recommends keeping them as escape hatches when precise control over effect dependencies is required. Battle-tested at Meta and supported by <a href=\"https://expo.dev/changelog/sdk-54\">Expo SDK 54</a>, <a href=\"https://vite.dev\">Vite</a> and <a href=\"https://nextjs.org\">Next.js</a>, the compiler also removes a category of performance boilerplate that has long been a cost of working at scale with React. React 19 also introduces Actions and hooks such as <code>useActionState</code> and <code>useOptimistic</code>, which simplify form handling and data mutations without relying on external libraries. The launch of the React Foundation under the Linux Foundation in 2025 \u2014 with Amazon, Expo, Callstack, Microsoft, Software Mansion and Vercel joining Meta \u2014 further strengthens the library's long-term stability and addresses a concern cautious teams have historically cited when considering adoption.</p>"
-  },
-  {
-    "name": "React Native",
-    "ring": "ADOPT",
-    "quadrant": "Languages & Frameworks",
-    "isNew": "FALSE",
-    "description": "<p><strong><a href=\"https://reactnative.dev/architecture/landing-page\">React Native</a></strong> has moved to Adopt as our default choice for cross-platform mobile development. While previously in Trial, the rollout of the New Architecture \u2014 specifically <code>JSI</code> and <code>Fabric</code> \u2014 has addressed long-standing concerns regarding bridge bottlenecks and initialization speed. Our teams have observed significant performance gains in complex UI transitions and data-intensive workloads. By moving away from the asynchronous bridge, React Native now delivers responsiveness that rivals native implementations while maintaining a single codebase.</p>\n <p>We\u2019ve used it successfully across multiple production projects and found the ecosystem around Expo and React to be mature and stable. While state management still requires careful planning, the productivity benefits of <code>fast</code> <code>refresh</code> workflows and shared skill sets outweigh these costs. For most hybrid mobile use cases, React Native is now our primary recommendation for teams seeking performance, consistency and speed.</p>"
-  },
-  {
-    "name": "Svelte",
-    "ring": "ADOPT",
-    "quadrant": "Languages & Frameworks",
-    "isNew": "FALSE",
-    "description": "<p><strong><a href=\"https://svelte.dev/\">Svelte</a></strong> is a JavaScript UI framework that compiles components into optimized JavaScript at build time rather than relying on a large browser-side runtime or virtual DOM. Since we last featured it in Trial, we've seen more teams use it successfully in production. <a href=\"https://svelte.dev/docs/kit/introduction\">SvelteKit</a> has also made it a more robust choice for SSR and full-stack web applications, increasing our confidence in moving it to Adopt. </p>\n <p>In our experience, the original reasons to choose Svelte still hold: it produces small bundles, delivers strong run-time performance and offers a simpler component model. Newer capabilities in Svelte 5, such as runes and snippets, make reactivity and UI composition more explicit and flexible. Compared with heavier front-end frameworks, Svelte provides a cleaner development experience with less code. Feedback from teams increasingly suggests it\u2019s a credible alternative to React or Vue rather than a niche option. Teams should still consider ecosystem familiarity, hiring and platform fit, but we now recommend Svelte as a sensible default for building modern web applications where performance and delivery simplicity matter.</p>"
-  },
-  {
     "name": "Typer",
-    "ring": "ADOPT",
+    "ring": "CAUTION",
     "quadrant": "Languages & Frameworks",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://typer.tiangolo.com/\">Typer</a></strong> is a Python library for building command-line interfaces from standard type-annotated functions, providing automatic help text, shell completion and a clear path from small scripts to larger CLI applications. We're seeing increased relevance as teams turn internal tooling, automation and AI-adjacent developer workflows into first-class CLIs. In our experience, Typer is easy to introduce on real projects, and teams appreciate how quickly it produces clear, readable commands. Its strengths include type-hint-driven APIs, automatic help and completion and a low-friction path from simple scripts to multi-command CLIs. However, it\u2019s a Python-specific solution and may not be the best fit when highly customized CLI behavior or cross-language consistency is required. We recommend Typer for teams building CLIs for delivery, operations and developer experience workflows.</p>"
@@ -822,13 +801,6 @@
     "name": "Unsloth",
     "ring": "ASSESS",
     "quadrant": "Languages & Frameworks",
-    "isNew": "TRUE",
-    "description": "<p><strong><a href=\"https://github.com/unslothai/unsloth\">Unsloth</a></strong> is an open-source framework for LLM fine-tuning and reinforcement learning that focuses on making training significantly faster and more memory efficient. Fine-tuning LLMs involves billions of matrix multiplications, workloads that benefit from GPU acceleration. Unsloth optimizes these operations by translating them into highly efficient custom kernels for NVIDIA GPUs, dramatically reducing cost and memory usage. This makes it possible to fine-tune models on consumer GPUs such as T4 and above rather than requiring expensive H100 clusters. Unsloth supports LoRA, full fine-tuning, multi-GPU training and long-context fine-tuning (up to 500K tokens) for popular models including Llama, Mistral, DeepSeek-R1, Qwen and Gemma. As <a href=\"/radar/techniques/domain-specific-llms\">domain-specific AI</a> applications increasingly rely on fine-tuning, Unsloth significantly lowers the barrier.</p>"
-  },
-  {
-    "name": "TEST",
-    "ring": "ASSESS",
-    "quadrant": "TEST",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://github.com/unslothai/unsloth\">Unsloth</a></strong> is an open-source framework for LLM fine-tuning and reinforcement learning that focuses on making training significantly faster and more memory efficient. Fine-tuning LLMs involves billions of matrix multiplications, workloads that benefit from GPU acceleration. Unsloth optimizes these operations by translating them into highly efficient custom kernels for NVIDIA GPUs, dramatically reducing cost and memory usage. This makes it possible to fine-tune models on consumer GPUs such as T4 and above rather than requiring expensive H100 clusters. Unsloth supports LoRA, full fine-tuning, multi-GPU training and long-context fine-tuning (up to 500K tokens) for popular models including Llama, Mistral, DeepSeek-R1, Qwen and Gemma. As <a href=\"/radar/techniques/domain-specific-llms\">domain-specific AI</a> applications increasingly rely on fine-tuning, Unsloth significantly lowers the barrier.</p>"
   }
