@@ -455,6 +455,20 @@
     "description": "<p><strong><a href=\"https://github.com/pytorch/torchtitan\">torchtitan</a></strong> is a PyTorch-native platform for large-scale pre-training of generative AI models, providing a clean and modular reference implementation for high-performance distributed training. It brings together advanced distributed primitives into a cohesive system, supporting <a href=\"https://discuss.pytorch.org/t/distributed-w-torchtitan-breaking-barriers-training-long-context-llms-with-1m-sequence-length-in-pytorch-using-context-parallel/215082\">4D parallelism</a>: data, tensor, pipeline and context parallelism. As training models at the scale of Llama 3.1 405B demands significant scale and efficiency, torchtitan offers a practical foundation for building and operating large training workloads. Its modular design makes it easier for teams to experiment with and evolve parallelism strategies while maintaining production readiness. We see torchtitan as a useful step toward standardizing large-scale model training in the PyTorch ecosystem, particularly for teams building their own pre-training infrastructure.</p>"
   },
   {
+    "name": "KrakendD",
+    "ring": "ASSESS",
+    "quadrant": "Platforms",
+    "isNew": "TRUE",
+    "description": ""
+  },
+  {
+    "name": "Kestra",
+    "ring": "ASSESS",
+    "quadrant": "Platforms",
+    "isNew": "TRUE",
+    "description": ""
+  },
+  {
     "name": "Axe-core",
     "ring": "ADOPT",
     "quadrant": "Tools",
@@ -700,106 +714,64 @@
     "description": "<p><strong><a href=\"https://typer.tiangolo.com/\">Typer</a></strong> is a Python library for building command-line interfaces from standard type-annotated functions, providing automatic help text, shell completion and a clear path from small scripts to larger CLI applications. We're seeing increased relevance as teams turn internal tooling, automation and AI-adjacent developer workflows into first-class CLIs. In our experience, Typer is easy to introduce on real projects, and teams appreciate how quickly it produces clear, readable commands. Its strengths include type-hint-driven APIs, automatic help and completion and a low-friction path from simple scripts to multi-command CLIs. However, it\u2019s a Python-specific solution and may not be the best fit when highly customized CLI behavior or cross-language consistency is required. We recommend Typer for teams building CLIs for delivery, operations and developer experience workflows.</p>"
   },
   {
-    "name": "Agent Development Kit (ADK)",
-    "ring": "TRIAL",
-    "quadrant": "Languages & Frameworks",
-    "isNew": "FALSE",
-    "description": "<p><strong><a href=\"https://google.github.io/adk-docs/\">Agent Development Kit</a></strong> (ADK) is Google\u2019s framework for building and operating AI agents with software-engineering-oriented abstractions for orchestration, tools, evaluation and deployment. Its ecosystem and operational capabilities have matured significantly since we included it in Assess, with active multi-language development and stronger observability and run-time features. Vendor-native agent frameworks are now a crowded field, with <a href=\"https://github.com/microsoft/agent-framework\">Microsoft Agent Framework</a>, <a href=\"https://aws.amazon.com/bedrock/agentcore/\">Amazon Bedrock AgentCore</a>, the <a href=\"https://openai.github.io/openai-agents-python/\">OpenAI Agents SDK</a> and the <a href=\"https://platform.claude.com/docs/en/agent-sdk/overview\">Claude Agent SDK</a> advancing competing options. Open-source alternatives such as <a href=\"/radar/languages-and-frameworks/langgraph\">LangGraph</a> and <a href=\"/radar/languages-and-frameworks/crewai\">CrewAI</a> remain strong choices, especially where teams prioritize framework portability and broader ecosystems. ADK remains pre-GA in parts, with occasional rough edges and upgrade friction, but we\u2019ve seen more projects using it successfully, particularly those already invested in Google\u2019s platform.</p>"
-  },
-  {
     "name": "DeepEval",
-    "ring": "TRIAL",
+    "ring": "CAUTION",
     "quadrant": "Languages & Frameworks",
     "isNew": "FALSE",
     "description": "<p><strong><a href=\"https://github.com/confident-ai/deepeval\">DeepEval</a></strong> is an open-source, Python-based framework for assessing LLM performance. It can be used to evaluate <a href=\"/radar/techniques/retrieval-augmented-generation-rag\">retrieval-augmented generation (RAG)</a> systems and applications built with frameworks such as <a href=\"/radar/languages-and-frameworks/llamaindex\">LlamaIndex</a> or <a href=\"/radar/languages-and-frameworks/langchain\">LangChain</a>, as well as to baseline and <a href=\"https://deepeval.com/docs/benchmarks-introduction?utm_source=GitHub\">benchmark models</a>. DeepEval goes beyond simple word-matching metrics, assessing accuracy, relevance and consistency to provide more reliable evaluation in real-world scenarios. It includes capabilities such as hallucination detection, answer relevance scoring and hyperparameter optimization. One feature our teams have found particularly helpful is that it allows teams to define custom, use-case\u2013specific metrics.</p>\n <p>Recently, DeepEval has expanded to support complex agentic workflows and multi-turn conversational systems. Beyond evaluating final outputs, it provides built-in metrics for <a href=\"https://deepeval.com/docs/metrics-tool-correctness\">tool correctness</a>, <a href=\"https://deepeval.com/docs/metrics-step-efficiency\">step efficiency</a> and <a href=\"https://deepeval.com/docs/metrics-task-completion\">task completion</a>, including evaluation of interactions with <a href=\"https://deepeval.com/docs/metrics-multi-turn-mcp-use\">MCP servers</a>. It also introduces conversation simulation to automatically generate test cases and stress-test multi-turn applications at scale.</p>"
   },
   {
     "name": "Docling",
-    "ring": "TRIAL",
+    "ring": "CAUTION",
     "quadrant": "Languages & Frameworks",
     "isNew": "FALSE",
     "description": "<p><strong><a href=\"https://docling-project.github.io/docling/\">Docling</a></strong> is an open-source Python and TypeScript library for converting unstructured documents into clean, machine-readable outputs. Using a computer vision\u2013based approach to layout and semantic understanding, it processes complex inputs \u2014 including PDFs and scanned documents \u2014 into structured formats such as JSON and Markdown. That makes it a strong fit for <a href=\"/radar/techniques/retrieval-augmented-generation-rag\">retrieval-augmented generation (RAG)</a> pipelines and for producing <a href=\"/radar/techniques/structured-output-from-llms\">structured outputs from LLMs</a>, in contrast to vision-first retrieval approaches such as <a href=\"/radar/tools/colpali\">ColPali</a>.</p>\n <p>Docling provides an open-source, self-hostable alternative to proprietary cloud-managed services such as <a href=\"/radar/tools/azure-document-intelligence\">Azure Document Intelligence</a>, <a href=\"https://aws.amazon.com/textract/\">Amazon Textract</a> and <a href=\"https://cloud.google.com/document-ai\">Google Document AI</a>, while integrating well with frameworks such as <a href=\"/radar/languages-and-frameworks/langgraph\">LangGraph</a>. In our experience, it performs well in production-scale extraction workloads across digital and scanned PDFs, including very large files containing text, tables and images. It delivers a strong quality-to-cost balance for downstream agentic RAG workflows. Based on these results, we\u2019re moving Docling to Trial.</p>"
   },
   {
     "name": "LangExtract",
-    "ring": "TRIAL",
+    "ring": "CAUTION",
     "quadrant": "Languages & Frameworks",
     "isNew": "FALSE",
     "description": "<p><strong><a href=\"https://github.com/google/langextract\">LangExtract</a></strong> is a Python library that uses LLMs to extract structured information from unstructured text based on user-defined instructions, with precise source grounding that links each extracted entity to its location in the original document. It processes domain-specific materials such as clinical notes and reports. A key strength is source traceability, which ensures each extracted data point can be traced back to its source. The extracted entities can be exported as a JSONL file, a standard format for language model data, and visualized through an interactive HTML interface for contextual review. Teams considering <a href=\"/radar/techniques/structured-output-from-llms\">structured output from LLMs</a> for document processing should evaluate LangExtract alongside schema-enforcement approaches such as <a href=\"/radar/languages-and-frameworks/pydantic-ai\">Pydantic AI</a>. LangExtract is better suited to long-form, unstructured source material, while Pydantic AI excels at constraining output formats for shorter, more predictable inputs.</p>"
   },
   {
     "name": "LangGraph",
-    "ring": "TRIAL",
+    "ring": "CAUTION",
     "quadrant": "Languages & Frameworks",
     "isNew": "FALSE",
     "description": "<p>Since the previous Radar, we\u2019ve observed that the <a href=\"https://www.langchain.com/langgraph\">LangGraph</a> architecture \u2014 which treats every multi-agent system as stateful graphs with a global shared state \u2014 is not always the best approach for building agentic systems. We\u2019ve also seen an alternative approach, used in frameworks such as <a href=\"https://www.thoughtworks.com/radar/languages-and-frameworks/pydantic-ai\">Pydantic AI</a>, that also works well.</p>\n <p>Instead of starting with a rigid graph and a massive shared state, this approach favors simple agents communicating through code execution, with graph structures added later when needed. It often results in leaner and more effective systems for many use cases. Because each agent only has access to the state it needs, reasoning, testing and debugging become easier. As a result, we\u2019ve moved LangGraph out of Adopt. While it remains a powerful tool, we no longer see it as the default choice for building every agentic system.</p>"
   },
   {
     "name": "LiteLLM",
-    "ring": "TRIAL",
+    "ring": "CAUTION",
     "quadrant": "Languages & Frameworks",
     "isNew": "FALSE",
     "description": "<p><a href=\"https://github.com/BerriAI/litellm\">LiteLLM</a> started as a thin abstraction layer over multiple LLM providers but has since expanded into a full-fledged AI gateway. Beyond simplifying API integration, it addresses common cross-cutting concerns in GenAI systems such as retries and failover, load balancing across providers and cost tracking with budget controls.</p>\n <p>Our teams are increasingly adopting LiteLLM as a sensible default for AI-powered applications. The gateway provides a consistent place to address governance concerns, including request tracing, access control, API key management and edge-level guardrails such as content filtering and data redaction or masking. However, teams that rely on differentiating provider features will find these often require provider-specific parameters, reintroducing the coupling the gateway is meant to eliminate. It\u2019s also worth noting that <code>drop_params</code> mode silently discards unsupported parameters, meaning capabilities may be lost across routing decisions without visibility. LiteLLM remains a pragmatic choice for operational control, but teams should understand that leaning into provider-specific capabilities means maintaining both a gateway dependency and provider-coupled code.</p>"
   },
   {
-    "name": "Modern.js",
-    "ring": "TRIAL",
-    "quadrant": "Languages & Frameworks",
-    "isNew": "TRUE",
-    "description": "<p><strong><a href=\"https://modernjs.dev\">Modern.js</a></strong> is a React meta-framework from ByteDance that we\u2019re placing in Trial for teams with micro-frontend requirements built on Module Federation. The trigger is practical: <code>nextjs-mf</code> is heading toward end-of-life. The Pages Router will receive only small backported fixes, no new development is planned, and CI tests are expected to be removed by mid-to-late 2026. With Next.js lacking official Module Federation support and the community plugin being phased out, the Module Federation core team now recommends Modern.js as the primary supported framework for federation-based architectures. The <code>@module-federation/modern-js-v3</code> plugin provides automatic build wiring out of the box, with streaming SSR and Bridge APIs available as separate capabilities. However, combining them has limitations: <code>@module-federation/bridge-react</code> is not yet compatible with Node environments, making Bridge unusable in SSR scenarios.</p>\n <p>Our early experience is positive, and the migration path is well defined for teams already using Module Federation. The ecosystem outside ByteDance is still maturing, so teams should plan for thinner documentation and closer engagement with upstream. This remains a Trial recommendation, because investment is justified for Module Federation use cases where no better-supported alternative currently exists.</p>"
-  },
-  {
-    "name": "Agent Lightning",
-    "ring": "ASSESS",
-    "quadrant": "Languages & Frameworks",
-    "isNew": "TRUE",
-    "description": "<p><strong><a href=\"https://github.com/microsoft/agent-lightning\">Agent Lightning</a></strong> is an agent optimization and training framework that enables automatic prompt optimization, supervised fine-tuning and <a href=\"/radar/techniques/agentic-reinforcement-learning-environments\">agentic reinforcement learning</a>. Most agent frameworks focus on building agents, not improving them over time. Agent Lightning addresses this by enabling teams to continuously improve existing agents without changing their underlying implementation, as it supports frameworks such as <a href=\"/radar/languages-and-frameworks/microsoft-autogen\">AutoGen</a> and <a href=\"/radar/languages-and-frameworks/crewai\">CrewAI</a>. It achieves this through an approach called <a href=\"https://arxiv.org/pdf/2508.03680\">Training-Agent Disaggregation</a>, which introduces a layer between the training and agent frameworks. This layer consists of two core components: the Lightning Server and the Lightning Client. The Lightning Server manages the training process and exposes an API for updated models, while the Lightning Client acts as a runtime that collects traces and sends them back to the server to support training. We recommend teams with established agent deployments explore Agent Lightning as a way to continuously improve agent performance.</p>"
-  },
-  {
     "name": "GitHub Spec Kit",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Languages & Frameworks",
     "isNew": "TRUE",
     "description": "<p><a href=\"/radar/techniques/spec-driven-development\">Spec-driven development</a> featured prominently in our discussion this cycle. Two broad camps are emerging: teams that rely on the continually improving capabilities of coding agents with minimal structure, and those that favor defined workflows and detailed specifications. </p>\n <p>Several of our teams are experimenting with spec-driven practices using <strong><a href=\"https://github.com/github/spec-kit\">GitHub Spec Kit</a></strong>, mostly in brownfield environments. A key concept in Spec Kit is the <a href=\"https://github.com/github/spec-kit?tab=readme-ov-file#2-establish-project-principles\">constitution</a>, a foundational rulebook that aligns the software development lifecycle. In practice, teams reported that a useful constitution typically captures project scope, domain context, technology versions, coding standards and repository structure (for example, hexagonal architecture or layered modules). This shared context helps agents operate within the intended architectural boundaries.</p>\n <p>Teams also encountered challenges such as <a href=\"/radar/techniques/agent-instruction-bloat\">instruction bloat</a>, where continually adding project context led to a growing agent instruction set and eventually <a href=\"https://redis.io/blog/context-rot/\">context rot</a>. One team addressed this by extracting reusable guidance into <a href=\"/radar/techniques/agent-skills\">skills</a>, keeping agent instructions lean and loading detailed context only when needed. </p>\n <p>In brownfield systems, much rework stems from unclear intent, hidden assumptions and late discovery of constraints. One team adopted a lifecycle of spec \u2192 plan \u2192 tasks \u2192 coding \u2192 review, which helped surface issues earlier. Over time they also moved repeatable context into files such as <code>.github/prompts/speckit.&lt;command&gt;.prompt.md</code>, making prompts shorter and agent behavior more consistent. Teams did report rough edges, including unnecessary defensive checks and overly verbose markdown outputs that increased cognitive load. Customizing Spec Kit templates and instructions \u2014 for example limiting the number of generated markdown files and reducing console verbosity \u2014 helped address some of these issues.\n Ultimately, experienced engineers, particularly those with strong clean coding and architectural practices, tend to extract the most value from spec-driven workflows.</p>"
   },
   {
-    "name": "Mastra",
-    "ring": "ASSESS",
-    "quadrant": "Languages & Frameworks",
-    "isNew": "TRUE",
-    "description": "<p><strong><a href=\"https://github.com/mastra-ai/mastra\">Mastra</a></strong> is an open-source, TypeScript-native framework for building AI applications and agents. It offers a graph-based workflow engine, unified access to a variety of LLM providers, human-in-the-loop suspension and resumption, as well as RAG and memory primitives. It also includes MCP server authoring and built-in tooling for evaluation and observability, supported by clear developer documentation. Mastra provides an alternative to Python-heavy stacks, allowing teams to build feature-rich AI capabilities directly within existing web ecosystems such as Node.js or Next.js. It's worth evaluating for teams already invested in the TypeScript ecosystem who want to avoid switching to Python for their AI layer.</p>"
-  },
-  {
     "name": "Pipecat",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Languages & Frameworks",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://github.com/pipecat-ai/pipecat\">Pipecat</a></strong> is an open-source framework for building real-time voice and multimodal agents with a modular pipeline model for STT, LLM, TTS and transport orchestration. It\u2019s attracting strong interest because teams can iterate quickly on conversational behavior and swap providers with relatively low friction.</p>\n <p>Compared to <strong><a href=\"https://github.com/livekit/agents\">LiveKit Agents</a></strong>, Pipecat offers greater framework flexibility but a less integrated production path, especially for self-hosted deployment, transport reliability and low-latency turn handling at scale. We\u2019ve placed Pipecat in Assess because it provides a strong engineering-facing foundation, but significant platform engineering work is required before it can be relied on for business-critical production workloads.</p>"
   },
   {
-    "name": "Superpowers",
-    "ring": "ASSESS",
-    "quadrant": "Languages & Frameworks",
-    "isNew": "TRUE",
-    "description": "<p>With the growing use of <a href=\"/radar/tools/software-engineering-agents\">coding agents</a>, there is no single prescribed workflow for every team. Instead, teams are evolving bespoke workflows based on their context and constraints. Our teams across the globe are actively defining and experimenting with such AI-assisted coding workflows. <strong><a href=\"https://github.com/obra/superpowers\">Superpowers</a></strong> is one such workflow built from composable <a href=\"/radar/techniques/agent-skills\">skills</a>. It wraps a coding agent in a structured workflow of skills that encourage brainstorming before coding, detailed planning before implementation, test-driven development with enforced red-green-refactor cycles, systematic root-cause-first debugging and post-implementation code review. Superpowers is distributed as a plugin via the <a href=\"/radar/tools/claude-code-plugin-marketplace\">Claude Code plugin marketplace</a> as well as the Cursor plugin marketplace.</p>"
-  },
-  {
-    "name": "TanStack Start",
-    "ring": "ASSESS",
-    "quadrant": "Languages & Frameworks",
-    "isNew": "TRUE",
-    "description": "<p><strong><a href=\"https://tanstack.com/start/latest\">TanStack Start</a></strong> is a full-stack framework built on TanStack Router for React and Solid. It's comparable to Next.js, supporting SSR, caching and many of the same features. TanStack Start provides end-to-end compile-time safety across server functions, loaders and routing, reducing the risk of broken links or mismatched data shapes on the frontend.</p>\n <p>The framework favors explicit configuration over convention, making the experience closer to working with plain React. You can also progressively add SSR capabilities as needed. Compared to Next.js, which has more opinionated defaults that can lead to unexpected behavior if teams are unfamiliar with its inner workings, TanStack Start is more explicit and predictable. The <a href=\"https://tanstack.com/\">TanStack</a> ecosystem has also matured significantly, offering a strong set of tools for building modern web applications.</p>"
-  },
-  {
     "name": "TOON (Token-Oriented Object Notation)",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Languages & Frameworks",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://toonformat.dev\">TOON</a> (Token-Oriented Object Notation)</strong> is a human-readable encoding for JSON data designed to reduce token usage when structured data is passed to LLMs. It allows teams to retain JSON in existing systems and transform it only at the point of interaction with the model. This matters because token cost, latency and context-window constraints are becoming real design considerations in RAG pipelines, agent workflows and other AI-heavy applications. Raw JSON often spends tokens on repeated keys and structural overhead rather than useful content. </p>\n <p>In our early evaluation, TOON is an interesting last-mile optimization for prompt inputs, particularly for large, regular datasets where a more schema-aware format can be both more efficient and easier for models to process than JSON. It\u2019s not a replacement for JSON in APIs, databases or model outputs, and is often the wrong choice for deeply nested or non-uniform structures, semi-uniform arrays or flat tabular data where CSV is more compact. It may also be less suitable for latency-critical paths where compact JSON performs well. For these reasons, we think TOON is worth assessing for teams building LLM applications where structured input size is a meaningful cost or quality concern. Teams should benchmark it against JSON or CSV using their own data and model stack.</p>"
   },
   {
     "name": "Unsloth",
-    "ring": "ASSESS",
+    "ring": "CAUTION",
     "quadrant": "Languages & Frameworks",
     "isNew": "TRUE",
     "description": "<p><strong><a href=\"https://github.com/unslothai/unsloth\">Unsloth</a></strong> is an open-source framework for LLM fine-tuning and reinforcement learning that focuses on making training significantly faster and more memory efficient. Fine-tuning LLMs involves billions of matrix multiplications, workloads that benefit from GPU acceleration. Unsloth optimizes these operations by translating them into highly efficient custom kernels for NVIDIA GPUs, dramatically reducing cost and memory usage. This makes it possible to fine-tune models on consumer GPUs such as T4 and above rather than requiring expensive H100 clusters. Unsloth supports LoRA, full fine-tuning, multi-GPU training and long-context fine-tuning (up to 500K tokens) for popular models including Llama, Mistral, DeepSeek-R1, Qwen and Gemma. As <a href=\"/radar/techniques/domain-specific-llms\">domain-specific AI</a> applications increasingly rely on fine-tuning, Unsloth significantly lowers the barrier.</p>"
